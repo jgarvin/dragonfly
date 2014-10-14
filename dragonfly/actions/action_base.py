@@ -51,10 +51,10 @@ class ActionBase(object):
     # Initialization and aggregation methods.
 
     def __init__(self):
-        self._str = ""
+        self._str = u""
 
-    def __str__(self):
-        return "%s(%s)" % (self.__class__.__name__, self._str)
+    def __unicode__(self):
+        return u"%s(%s)" % (self.__class__.__name__, self._str)
 
     def __add__(self, other):
         return ActionSeries(self, other)
@@ -165,7 +165,7 @@ class BoundAction(ActionBase):
         ActionBase.__init__(self)
         self._action = action
         self._data = data
-        self._str = "%s, %s" % (action, data)
+        self._str = u"%s, %s" % (action, data)
 
     #-----------------------------------------------------------------------
     # Execution methods.

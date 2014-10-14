@@ -74,7 +74,7 @@ class DictationContainerBase(object):
         return unicode(self._formatted)
 
     def __repr__(self):
-        return "%s(%s)" % (self.__class__.__name__, ", ".join(self._words))
+        return  u"%s(%s)" % (self.__class__.__name__, repr(u", ".join(self._words)))
 
     @property
     def words(self):
@@ -84,3 +84,4 @@ class DictationContainerBase(object):
     def format(self):
         """ Format and return this dictation. """
         return u" ".join(self._words)
+            

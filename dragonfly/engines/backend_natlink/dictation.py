@@ -95,7 +95,7 @@ class Word(object):
         if word in self._replacements:
             word, self._info = self._replacements[word]
         else:
-            self._info = natlink.getWordInfo(word)
+            self._info = natlink.getWordInfo(word.encode('latin_1'))
         self._word = word
         index = word.rfind("\\")
         if index == -1:
@@ -198,3 +198,4 @@ class FormatState(object):
         output = "".join(output)
         self._log.debug("Formatted output: %r" % (output,))
         return output
+            
