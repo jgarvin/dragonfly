@@ -59,8 +59,8 @@ class Timer(object):
         try:
             self.function()
         except Exception, e:
-            logging.getLogger("timer").exception("Exception during timer callback: e"
-                                       % (e,))
+            logging.getLogger("timer").exception("Exception during timer callback: %s"
+                                      % (e,))
 
 
 class TimerManagerBase(object):
